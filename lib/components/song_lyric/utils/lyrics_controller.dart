@@ -1,12 +1,15 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:zpevnik/models/song_lyric.dart';
 import 'package:zpevnik/components/song_lyric/utils/parser.dart';
 
 final _styleRE = RegExp(r'\<style[^\<]*\<\/style\>');
-final _heightRE = RegExp(r'height="([\d\.]+)mm"');
-final _widthRE = RegExp(r'width="([\d\.]+)"');
+final _viewBoxRE = RegExp(r'<svg[^>]* viewBox="0 0 ([\d\.]+) ([\d\.]+)"[^>]*>');
+final _sizeRE = RegExp(r'width="([\d\.]+)[^"]*" height="([\d\.]+)[^"]*"');
 
-class LyricsController {
+class LyricsController extends AssetBundle {
   final SongLyric songLyric;
   final SongLyricsParser parser;
 
@@ -15,6 +18,7 @@ class LyricsController {
   LyricsController(this.songLyric, this.context) : parser = SongLyricsParser(songLyric);
 
   double? _musicNotesWidth;
+  double? _musicNotesMaxWidth;
   String? _musicNotes;
 
   String get title => songLyric.name;
@@ -22,19 +26,24 @@ class LyricsController {
   bool get hasMusicNotes => songLyric.musicNotes != null;
 
   double get musicNotesWidth => _musicNotesWidth ?? 0;
+  double get musicNotesMaxWidth => _musicNotesMaxWidth ?? 0;
 
   String get musicNotes {
     if (_musicNotes != null) return _musicNotes!;
 
-    _musicNotes = (songLyric.musicNotes ?? '')
-        .replaceAll(_styleRE, '')
-        .replaceAll(_heightRE, '')
-        .replaceFirstMapped(_widthRE, (match) {
-      _musicNotesWidth = double.tryParse(match.group(1) ?? '');
+    final viewBoxMatch = _viewBoxRE.firstMatch(songLyric.musicNotes ?? '');
 
-      return '';
+    if (viewBoxMatch != null) _musicNotesWidth = double.parse(viewBoxMatch.group(1)!);
+
+    _musicNotes = (songLyric.musicNotes ?? '').replaceAll(_styleRE, '').replaceFirstMapped(_sizeRE, (match) {
+      _musicNotesMaxWidth = double.parse(match.group(1)!);
+
+      return 'viewBox="0 0 ${viewBoxMatch!.group(1)!} ${viewBoxMatch.group(2)!}"';
     });
 
     return _musicNotes!;
   }
+
+  @override
+  Future<ByteData> load(String _) async => utf8.encode(musicNotes).buffer.asByteData();
 }

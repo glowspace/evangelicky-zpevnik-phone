@@ -46,7 +46,7 @@ Future<void> loadInitial(AppDependencies appDependencies) async {
   final lastVersion = appDependencies.sharedPreferences.getString(_versionKey);
   final currentVersion = '${appDependencies.packageInfo.version}+${appDependencies.packageInfo.buildNumber}';
 
-  // if (lastVersion == currentVersion) return;
+  if (lastVersion == currentVersion) return;
 
   // TODO: remove this after some time, that all users have at least 3.1.0 version
   migratePinnedSongbooks(appDependencies.store, appDependencies.sharedPreferences);
@@ -105,7 +105,7 @@ Stream<UpdateStatus> update(UpdateRef ref) async* {
   // query existing song lyrics to check song lyrics that are missing in local db or that were removed on server
   final box = appDependencies.store.box<SongLyric>();
   final query = box.query().build();
-  final existingSongLyricsIds = query.findIds().toSet();
+  final existingSongLyricsIds = query.property(SongLyric_.internalId).find().toSet();
 
   query.close();
 

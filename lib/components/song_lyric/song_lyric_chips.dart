@@ -63,7 +63,7 @@ class SongLyricChips extends StatelessWidget {
         if (songLyric.hasHymnology)
           SongLyricChip(
             text: 'O písni',
-            icon: FontAwesomeIcons.info,
+            icon: Icons.info,
             onTap: () => showModalBottomSheet(
               context: context,
               builder: (_) => SongLyricInfo(songLyric: songLyric),

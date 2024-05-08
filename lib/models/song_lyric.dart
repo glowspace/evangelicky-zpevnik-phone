@@ -96,7 +96,7 @@ class SongLyric with _$SongLyric implements DisplayableItem, Identifiable, Recen
 
   bool get hasLyrics => lyrics != null && lyrics!.isNotEmpty;
 
-  String? get musicNotes => lilypond ?? externalRenderedScores;
+  String? get musicNotes => externalRenderedScores ?? lilypond;
   bool get hasMusicNotes => musicNotes != null && musicNotes!.isNotEmpty;
 
   // temporary fix, until API provides correct value

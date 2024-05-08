@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jovial_svg/jovial_svg.dart';
 import 'package:zpevnik/components/song_lyric/song_lyric_chips.dart';
 import 'package:zpevnik/components/song_lyric/utils/active_player_controller.dart';
 import 'package:zpevnik/components/song_lyric/utils/auto_scroll.dart';
@@ -84,13 +84,10 @@ class _SongLyricWidgetState extends ConsumerState<SongLyricWidget> {
               child: SongLyricChips(songLyric: widget.songLyric),
             ),
             if (controller.hasMusicNotes && showLilypond)
-              LayoutBuilder(
-                builder: (_, constraints) => SvgPicture.string(
-                  alignment: Alignment.centerLeft,
-                  controller.songLyric.musicNotes!,
-                  theme: SvgTheme(currentColor: theme.colorScheme.onBackground),
-                  width: min(constraints.maxWidth, fontSizeScale * controller.musicNotesWidth),
-                ),
+              ScalableImageWidget.fromSISource(
+                si: ScalableImageSource.fromSvg(controller, ''),
+                scale:
+                    min(MediaQuery.sizeOf(context).width, controller.musicNotesMaxWidth) / controller.musicNotesWidth,
               ),
             SizedBox(height: kDefaultPadding * fontSizeScale),
             MediaQuery(

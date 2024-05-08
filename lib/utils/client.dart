@@ -188,6 +188,6 @@ class Client {
   Future<Map<String, dynamic>> getSongLyric(int id) async {
     final result = await client.query(QueryOptions(document: gql(_songLyricQuery.replaceFirst(_idPlaceholder, '$id'))));
 
-    return result.data!;
+    return result.data!['song_lyric'];
   }
 }
