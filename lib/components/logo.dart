@@ -14,17 +14,12 @@ class Logo extends StatelessWidget {
     final textColor = Theme.of(context).brightness.isLight ? lightTitleColor : darkTitleColor;
 
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset('assets/images/logos/logo.png'),
         const SizedBox(width: kDefaultPadding),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Zpěvník', style: GoogleFonts.roboto(fontSize: 34, color: textColor, fontWeight: FontWeight.w700)),
-          ],
-        )
+        Text('Zpěvník', style: GoogleFonts.roboto(fontSize: 34, color: textColor, fontWeight: FontWeight.w700)),
       ],
     );
   }
