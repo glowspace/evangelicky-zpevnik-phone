@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="jozkar.mladez">
+    package="cce.evangelicky_zpevnik">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,7 +10,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="${applicationName}"
-        android:label="Zpěvník"
+        android:label="Evangelický zpěvník"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round">
         <!-- must use android:launchMode="singleTask" so it does not start new activity when opening ".proscholy" file -->
@@ -33,15 +33,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Accepts URIs that begin with "zpevnik.proscholy.cz” -->
-                <data android:scheme="https"
-                    android:host="www.zpevnik.proscholy.cz" />
             </intent-filter>
 
             <!-- Accept files with ".proscholy" extension, will enable to appear our app in "Open with app". -->

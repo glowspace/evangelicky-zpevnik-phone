@@ -11,6 +11,8 @@ class Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textColor = Theme.of(context).brightness.isLight ? lightTitleColor : darkTitleColor;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -20,10 +22,7 @@ class Logo extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Zpěvník', style: GoogleFonts.roboto(fontSize: 34, fontWeight: FontWeight.w700)),
-            // hiding full name for now
-            // if (showFullName)
-            //   Text('ProScholy.cz', style: GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w400)),
+            Text('Zpěvník', style: GoogleFonts.roboto(fontSize: 34, color: textColor, fontWeight: FontWeight.w700)),
           ],
         )
       ],

@@ -17,7 +17,7 @@ class AboutScreen extends StatelessWidget {
     final highlightedStyle = textStyle?.copyWith(color: theme.colorScheme.primary);
     final boldStyle = textStyle?.copyWith(fontWeight: FontWeight.bold);
 
-    final linkOpener = TapGestureRecognizer()..onTap = () => launch(proscholyUrl);
+    final linkOpener = TapGestureRecognizer()..onTap = () => launch('https://evangelickyzpevnik.glowspace.cz');
 
     return SafeAreaWrapper(
       child: Scaffold(
@@ -28,10 +28,9 @@ class AboutScreen extends StatelessWidget {
             padding: const EdgeInsets.all(kDefaultPadding),
             child: RichText(
               text: TextSpan(
-                text: 'Zpěvník ',
+                text: 'Evangelický Zpěvník',
                 style: textStyle,
                 children: [
-                  TextSpan(text: 'ProScholy.cz', style: highlightedStyle, recognizer: linkOpener),
                   TextSpan(
                     text:
                         ', který přichází na${unbreakableSpace}pomoc všem scholám, křesťanským kapelám, společenstvím a${unbreakableSpace}všem, kdo se chtějí modlit hudbou!\n\nProjekt vzniká se svolením ',
@@ -43,7 +42,8 @@ class AboutScreen extends StatelessWidget {
                         '.\n\nDalší informace o${unbreakableSpace}stavu a${unbreakableSpace}rozvoji projektu naleznete na$unbreakableSpace',
                     style: textStyle,
                   ),
-                  TextSpan(text: proscholyUrl, style: highlightedStyle, recognizer: linkOpener),
+                  TextSpan(
+                      text: 'https://evangelickyzpevnik.glowspace.cz', style: highlightedStyle, recognizer: linkOpener),
                   TextSpan(text: '.', style: textStyle),
                 ],
               ),

@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:intl/intl.dart';
 
+const _ezHeaders = {'Filter-Content': 'ez'};
+
 final _dateFormat = DateFormat('yyyy-MM-dd HH:mm:ss');
 
 final _link = HttpLink('https://zpevnik.proscholy.cz/graphql');

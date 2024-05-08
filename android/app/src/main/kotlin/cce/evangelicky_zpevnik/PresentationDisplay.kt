@@ -1,4 +1,4 @@
-package jozkar.mladez
+package cce.evangelicky_zpevnik
 
 import android.app.Presentation
 import android.content.Context

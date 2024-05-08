@@ -1,4 +1,4 @@
-package jozkar.mladez
+package cce.evangelicky_zpevnik
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

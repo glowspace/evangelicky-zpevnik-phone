@@ -7,8 +7,6 @@
 		<string>Default</string>
 	</array>
 	<key>com.apple.developer.associated-domains</key>
-	<array>
-		<string>applinks:zpevnik.proscholy.cz</string>
-	</array>
+	<array/>
 </dict>
 </plist>

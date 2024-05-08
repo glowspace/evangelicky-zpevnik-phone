@@ -1,4 +1,4 @@
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -20,12 +20,12 @@ import 'package:zpevnik/theme.dart';
 import 'package:zpevnik/utils/services/external_actions.dart';
 import 'package:zpevnik/utils/services/spotlight.dart';
 
-const _title = 'Zpěvník';
+const _title = 'Evangelický zpěvník';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   final appDependencies = AppDependencies(
     sharedPreferences: await SharedPreferences.getInstance(),
