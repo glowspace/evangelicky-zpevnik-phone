@@ -42,6 +42,9 @@ song_lyrics_data = {
                 secondary_name_2
                 lyrics
                 lilypond_svg
+                external_rendered_scores {
+                    contents
+                }
                 lang
                 lang_string
                 type_enum

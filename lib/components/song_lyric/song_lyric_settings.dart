@@ -53,7 +53,7 @@ class SongLyricSettingsModelWidget extends ConsumerWidget {
           dense: true,
           contentPadding: const EdgeInsets.symmetric(horizontal: 1.5 * kDefaultPadding),
         ),
-        if (songLyric.hasLilypond)
+        if (songLyric.hasMusicNotes)
           SwitchListTile.adaptive(
             title: Text('Zobrazit noty', style: theme.textTheme.bodyMedium),
             activeColor: theme.colorScheme.primary,

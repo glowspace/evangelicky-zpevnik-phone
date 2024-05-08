@@ -14,27 +14,27 @@ class LyricsController {
 
   LyricsController(this.songLyric, this.context) : parser = SongLyricsParser(songLyric);
 
-  double? _lilypondWidth;
-  String? _lilypond;
+  double? _musicNotesWidth;
+  String? _musicNotes;
 
   String get title => songLyric.name;
 
-  bool get hasLilypond => songLyric.lilypond != null;
+  bool get hasMusicNotes => songLyric.musicNotes != null;
 
-  double get lilypondWidth => _lilypondWidth ?? 0;
+  double get musicNotesWidth => _musicNotesWidth ?? 0;
 
-  String get lilypond {
-    if (_lilypond != null) return _lilypond!;
+  String get musicNotes {
+    if (_musicNotes != null) return _musicNotes!;
 
-    _lilypond = (songLyric.lilypond ?? '')
+    _musicNotes = (songLyric.musicNotes ?? '')
         .replaceAll(_styleRE, '')
         .replaceAll(_heightRE, '')
         .replaceFirstMapped(_widthRE, (match) {
-      _lilypondWidth = double.tryParse(match.group(1) ?? '');
+      _musicNotesWidth = double.tryParse(match.group(1) ?? '');
 
       return '';
     });
 
-    return _lilypond!;
+    return _musicNotes!;
   }
 }

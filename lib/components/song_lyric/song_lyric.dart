@@ -83,13 +83,13 @@ class _SongLyricWidgetState extends ConsumerState<SongLyricWidget> {
               padding: const EdgeInsets.symmetric(horizontal: 2 * kDefaultPadding),
               child: SongLyricChips(songLyric: widget.songLyric),
             ),
-            if (controller.hasLilypond && showLilypond)
+            if (controller.hasMusicNotes && showLilypond)
               LayoutBuilder(
                 builder: (_, constraints) => SvgPicture.string(
                   alignment: Alignment.centerLeft,
-                  controller.lilypond,
+                  controller.songLyric.musicNotes!,
                   theme: SvgTheme(currentColor: theme.colorScheme.onBackground),
-                  width: min(constraints.maxWidth, fontSizeScale * controller.lilypondWidth),
+                  width: min(constraints.maxWidth, fontSizeScale * controller.musicNotesWidth),
                 ),
               ),
             SizedBox(height: kDefaultPadding * fontSizeScale),
