@@ -7,7 +7,7 @@ const _ezHeaders = {'Filter-Content': 'ez'};
 
 final _dateFormat = DateFormat('yyyy-MM-dd HH:mm:ss');
 
-final _link = HttpLink('https://zpevnik.proscholy.cz/graphql');
+final _link = HttpLink('https://zpevnik.proscholy.cz/graphql', defaultHeaders: _ezHeaders);
 
 const _newsQuery = '''
 query {
