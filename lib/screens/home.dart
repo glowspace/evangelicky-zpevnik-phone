@@ -62,7 +62,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           HomeSection.news => const NewsSection(),
           HomeSection.recent => const RecentSection(),
           HomeSection.playlists => const SongListsSection(),
-          HomeSection.songbooks => const SongbooksSection(),
+          // HomeSection.songbooks => const SongbooksSection(),
         },
       const AdditionalSection(),
     ];

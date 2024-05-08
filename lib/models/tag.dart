@@ -11,7 +11,7 @@ const List<TagType> supportedTagTypes = [
   TagType.sacredOccasion,
   TagType.generic,
   TagType.saints,
-  TagType.songbook,
+  // TagType.songbook,
   TagType.playlist,
   TagType.language,
 ];

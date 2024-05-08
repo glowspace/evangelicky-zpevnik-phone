@@ -12,7 +12,9 @@ enum HomeSection {
   news('Novinky'),
   recent('Poslední položky'),
   playlists('Moje seznamy'),
-  songbooks('Zpěvníky');
+  // removed songbooks section for now
+  // songbooks('Zpěvníky'),
+  ;
 
   final String description;
 
