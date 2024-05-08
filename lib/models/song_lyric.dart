@@ -59,7 +59,8 @@ class SongLyric with _$SongLyric implements DisplayableItem, Identifiable, Recen
   @Entity(realClass: SongLyric)
   @JsonSerializable(fieldRename: FieldRename.snake, createToJson: false)
   const factory SongLyric({
-    @Id(assignable: true) @JsonKey(fromJson: int.parse) required int id,
+    @Id(assignable: true) @JsonKey(readValue: _readEzId) required int id,
+    @JsonKey(readValue: _readInternalId) required int internalId,
     required String name,
     @JsonKey(name: 'secondary_name_1') String? secondaryName1,
     @JsonKey(name: 'secondary_name_2') String? secondaryName2,
@@ -150,6 +151,22 @@ class SongLyric with _$SongLyric implements DisplayableItem, Identifiable, Recen
 
   @override
   bool operator ==(Object other) => other is SongLyric && id == other.id;
+}
+
+int _readEzId(Map<dynamic, dynamic> json, String _) {
+  final idString = json['songbook_records']
+      .firstWhere((songbookRecord) => songbookRecord['pivot']['songbook']['id'] == '58')['pivot']['number'];
+
+  if (idString == '531') {
+    print(idString);
+    print(json['name']);
+  }
+
+  return int.parse(idString);
+}
+
+int _readInternalId(Map<dynamic, dynamic> json, String _) {
+  return int.parse(json['id']);
 }
 
 ToOne<Song> _songFromJson(Map<String, dynamic>? json) {

@@ -46,7 +46,7 @@ Future<void> loadInitial(AppDependencies appDependencies) async {
   final lastVersion = appDependencies.sharedPreferences.getString(_versionKey);
   final currentVersion = '${appDependencies.packageInfo.version}+${appDependencies.packageInfo.buildNumber}';
 
-  if (lastVersion == currentVersion) return;
+  // if (lastVersion == currentVersion) return;
 
   // TODO: remove this after some time, that all users have at least 3.1.0 version
   migratePinnedSongbooks(appDependencies.store, appDependencies.sharedPreferences);
@@ -131,7 +131,7 @@ Stream<UpdateStatus> update(UpdateRef ref) async* {
       .then((json) => readJsonList(json[SongLyric.fieldKey], mapper: SongLyric.fromJson));
 
   for (final songLyric in songLyrics) {
-    missingSongLyricIds.remove(songLyric.id);
+    missingSongLyricIds.remove(songLyric.internalId);
   }
 
   // fetch missing song lyrics

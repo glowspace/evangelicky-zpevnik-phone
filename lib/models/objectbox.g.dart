@@ -183,7 +183,7 @@ final _entities = <ModelEntity>[
   ModelEntity(
       id: const IdUid(11, 6447883453535376640),
       name: 'SongLyric',
-      lastPropertyId: const IdUid(27, 6291458277285942163),
+      lastPropertyId: const IdUid(29, 1423809161795807367),
       flags: 0,
       properties: <ModelProperty>[
         ModelProperty(
@@ -264,7 +264,12 @@ final _entities = <ModelEntity>[
             type: 11,
             flags: 520,
             indexId: const IdUid(22, 6689134858203517923),
-            relationTarget: 'SongLyricSettingsModel')
+            relationTarget: 'SongLyricSettingsModel'),
+        ModelProperty(
+            id: const IdUid(29, 1423809161795807367),
+            name: 'internalId',
+            type: 6,
+            flags: 0)
       ],
       relations: <ModelRelation>[
         ModelRelation(
@@ -663,7 +668,8 @@ ModelDefinition getObjectBoxModel() {
         5404942060880140897,
         7528607199616284548,
         3483625794157916143,
-        3873057272621101277
+        3873057272621101277,
+        8900800022749379441
       ],
       retiredRelationUids: const [
         7916874752771113838,
@@ -952,7 +958,7 @@ ModelDefinition getObjectBoxModel() {
               : fbb.writeString(object.lilypond!);
           final langOffset = fbb.writeString(object.lang);
           final langDescriptionOffset = fbb.writeString(object.langDescription);
-          fbb.startTable(28);
+          fbb.startTable(30);
           fbb.addInt64(0, object.id);
           fbb.addOffset(1, nameOffset);
           fbb.addOffset(2, secondaryName1Offset);
@@ -968,6 +974,7 @@ ModelDefinition getObjectBoxModel() {
           fbb.addBool(22, object.showChords);
           fbb.addInt64(23, object.transposition);
           fbb.addInt64(26, object.settings.targetId);
+          fbb.addInt64(28, object.internalId);
           fbb.finish(fbb.endTable());
           return object.id;
         },
@@ -976,6 +983,8 @@ ModelDefinition getObjectBoxModel() {
           final rootOffset = buffer.derefObject(0);
           final idParam =
               const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+          final internalIdParam =
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 60, 0);
           final nameParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 6, '');
           final secondaryName1Param =
@@ -1016,6 +1025,7 @@ ModelDefinition getObjectBoxModel() {
           final playlistRecordsParam = ToMany<PlaylistRecord>();
           final object = SongLyric(
               id: idParam,
+              internalId: internalIdParam,
               name: nameParam,
               secondaryName1: secondaryName1Param,
               secondaryName2: secondaryName2Param,
@@ -1556,6 +1566,10 @@ class SongLyric_ {
   /// see [SongLyric.settings]
   static final settings = QueryRelationToOne<SongLyric, SongLyricSettingsModel>(
       _entities[5].properties[14]);
+
+  /// see [SongLyric.internalId]
+  static final internalId =
+      QueryIntegerProperty<SongLyric>(_entities[5].properties[15]);
 
   /// see [SongLyric.authors]
   static final authors =

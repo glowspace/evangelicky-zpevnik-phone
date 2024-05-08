@@ -169,7 +169,7 @@ final songLyricsProvider = Provider<List<SongLyric>>.internal(
 
 typedef SongLyricsRef = ProviderRef<List<SongLyric>>;
 String _$songsListSongLyricsHash() =>
-    r'5be5b2d1ea1000c78c94c7133639aa835b0eefae';
+    r'f7453854225630fcd3b1ab2d8c093243f7985c9d';
 
 /// See also [songsListSongLyrics].
 @ProviderFor(songsListSongLyrics)

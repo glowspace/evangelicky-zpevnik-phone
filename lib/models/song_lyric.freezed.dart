@@ -21,8 +21,10 @@ SongLyric _$SongLyricFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SongLyric {
   @Id(assignable: true)
-  @JsonKey(fromJson: int.parse)
+  @JsonKey(readValue: _readEzId)
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _readInternalId)
+  int get internalId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'secondary_name_1')
   String? get secondaryName1 => throw _privateConstructorUsedError;
@@ -74,7 +76,8 @@ abstract class $SongLyricCopyWith<$Res> {
       _$SongLyricCopyWithImpl<$Res, SongLyric>;
   @useResult
   $Res call(
-      {@Id(assignable: true) @JsonKey(fromJson: int.parse) int id,
+      {@Id(assignable: true) @JsonKey(readValue: _readEzId) int id,
+      @JsonKey(readValue: _readInternalId) int internalId,
       String name,
       @JsonKey(name: 'secondary_name_1') String? secondaryName1,
       @JsonKey(name: 'secondary_name_2') String? secondaryName2,
@@ -117,6 +120,7 @@ class _$SongLyricCopyWithImpl<$Res, $Val extends SongLyric>
   @override
   $Res call({
     Object? id = null,
+    Object? internalId = null,
     Object? name = null,
     Object? secondaryName1 = freezed,
     Object? secondaryName2 = freezed,
@@ -141,6 +145,10 @@ class _$SongLyricCopyWithImpl<$Res, $Val extends SongLyric>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      internalId: null == internalId
+          ? _value.internalId
+          : internalId // ignore: cast_nullable_to_non_nullable
               as int,
       name: null == name
           ? _value.name
@@ -231,7 +239,8 @@ abstract class _$$SongLyricImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@Id(assignable: true) @JsonKey(fromJson: int.parse) int id,
+      {@Id(assignable: true) @JsonKey(readValue: _readEzId) int id,
+      @JsonKey(readValue: _readInternalId) int internalId,
       String name,
       @JsonKey(name: 'secondary_name_1') String? secondaryName1,
       @JsonKey(name: 'secondary_name_2') String? secondaryName2,
@@ -272,6 +281,7 @@ class __$$SongLyricImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? internalId = null,
     Object? name = null,
     Object? secondaryName1 = freezed,
     Object? secondaryName2 = freezed,
@@ -296,6 +306,10 @@ class __$$SongLyricImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      internalId: null == internalId
+          ? _value.internalId
+          : internalId // ignore: cast_nullable_to_non_nullable
               as int,
       name: null == name
           ? _value.name
@@ -383,7 +397,8 @@ class __$$SongLyricImplCopyWithImpl<$Res>
 @JsonSerializable(fieldRename: FieldRename.snake, createToJson: false)
 class _$SongLyricImpl extends _SongLyric {
   const _$SongLyricImpl(
-      {@Id(assignable: true) @JsonKey(fromJson: int.parse) required this.id,
+      {@Id(assignable: true) @JsonKey(readValue: _readEzId) required this.id,
+      @JsonKey(readValue: _readInternalId) required this.internalId,
       required this.name,
       @JsonKey(name: 'secondary_name_1') this.secondaryName1,
       @JsonKey(name: 'secondary_name_2') this.secondaryName2,
@@ -416,8 +431,11 @@ class _$SongLyricImpl extends _SongLyric {
 
   @override
   @Id(assignable: true)
-  @JsonKey(fromJson: int.parse)
+  @JsonKey(readValue: _readEzId)
   final int id;
+  @override
+  @JsonKey(readValue: _readInternalId)
+  final int internalId;
   @override
   final String name;
   @override
@@ -476,7 +494,7 @@ class _$SongLyricImpl extends _SongLyric {
 
   @override
   String toString() {
-    return 'SongLyric(id: $id, name: $name, secondaryName1: $secondaryName1, secondaryName2: $secondaryName2, lyrics: $lyrics, lilypond: $lilypond, lang: $lang, langDescription: $langDescription, dbType: $dbType, hasChords: $hasChords, accidentals: $accidentals, showChords: $showChords, transposition: $transposition, song: $song, settings: $settings, authors: $authors, tags: $tags, externals: $externals, songbookRecords: $songbookRecords, playlistRecords: $playlistRecords)';
+    return 'SongLyric(id: $id, internalId: $internalId, name: $name, secondaryName1: $secondaryName1, secondaryName2: $secondaryName2, lyrics: $lyrics, lilypond: $lilypond, lang: $lang, langDescription: $langDescription, dbType: $dbType, hasChords: $hasChords, accidentals: $accidentals, showChords: $showChords, transposition: $transposition, song: $song, settings: $settings, authors: $authors, tags: $tags, externals: $externals, songbookRecords: $songbookRecords, playlistRecords: $playlistRecords)';
   }
 
   @JsonKey(ignore: true)
@@ -489,8 +507,9 @@ class _$SongLyricImpl extends _SongLyric {
 abstract class _SongLyric extends SongLyric {
   const factory _SongLyric(
       {@Id(assignable: true)
-      @JsonKey(fromJson: int.parse)
+      @JsonKey(readValue: _readEzId)
       required final int id,
+      @JsonKey(readValue: _readInternalId) required final int internalId,
       required final String name,
       @JsonKey(name: 'secondary_name_1') final String? secondaryName1,
       @JsonKey(name: 'secondary_name_2') final String? secondaryName2,
@@ -525,8 +544,11 @@ abstract class _SongLyric extends SongLyric {
 
   @override
   @Id(assignable: true)
-  @JsonKey(fromJson: int.parse)
+  @JsonKey(readValue: _readEzId)
   int get id;
+  @override
+  @JsonKey(readValue: _readInternalId)
+  int get internalId;
   @override
   String get name;
   @override
