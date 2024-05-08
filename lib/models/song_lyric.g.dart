@@ -17,6 +17,7 @@ _$SongLyricImpl _$$SongLyricImplFromJson(Map<String, dynamic> json) =>
       lilypond: json['lilypond_svg'] as String?,
       externalRenderedScores: _externalRenderedScoresFromJson(
           json['external_rendered_scores'] as List),
+      hymnology: json['hymnology'] as String,
       lang: json['lang'] as String,
       langDescription: json['lang_string'] as String,
       dbType: SongLyricType.rawValueFromString(json['type_enum'] as String?),

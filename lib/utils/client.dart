@@ -63,6 +63,7 @@ query {
     external_rendered_scores {
       contents
     }
+    hymnology
     lang
     lang_string
     type_enum
@@ -114,6 +115,7 @@ query {
     external_rendered_scores {
       contents
     }
+    hymnology
     lang
     lang_string
     type_enum

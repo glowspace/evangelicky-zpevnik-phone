@@ -151,7 +151,7 @@
     },
     {
       "id": "11:6447883453535376640",
-      "lastPropertyId": "30:4119502192344556831",
+      "lastPropertyId": "31:1452219602788211382",
       "name": "SongLyric",
       "properties": [
         {
@@ -244,6 +244,11 @@
         {
           "id": "30:4119502192344556831",
           "name": "externalRenderedScores",
+          "type": 9
+        },
+        {
+          "id": "31:1452219602788211382",
+          "name": "hymnology",
           "type": 9
         }
       ],

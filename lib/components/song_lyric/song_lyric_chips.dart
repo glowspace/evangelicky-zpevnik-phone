@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:zpevnik/components/selected_displayable_item_arguments.dart';
 import 'package:zpevnik/components/song_lyric/song_lyric_chip.dart';
 import 'package:zpevnik/components/song_lyric/song_lyric_files.dart';
+import 'package:zpevnik/components/song_lyric/song_lyric_info.dart';
 import 'package:zpevnik/components/song_lyric/song_lyric_tags.dart';
 import 'package:zpevnik/constants.dart';
 import 'package:zpevnik/models/song_lyric.dart';
@@ -57,6 +58,15 @@ class SongLyricChips extends StatelessWidget {
             onTap: () => showModalBottomSheet(
               context: context,
               builder: (_) => SongLyricTags(songLyric: songLyric),
+            ),
+          ),
+        if (songLyric.hasHymnology)
+          SongLyricChip(
+            text: 'O písni',
+            icon: FontAwesomeIcons.info,
+            onTap: () => showModalBottomSheet(
+              context: context,
+              builder: (_) => SongLyricInfo(songLyric: songLyric),
             ),
           ),
       ],

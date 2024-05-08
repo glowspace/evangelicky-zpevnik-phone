@@ -68,6 +68,7 @@ class SongLyric with _$SongLyric implements DisplayableItem, Identifiable, Recen
     @JsonKey(name: 'lilypond_svg') String? lilypond,
     @JsonKey(name: 'external_rendered_scores', fromJson: _externalRenderedScoresFromJson)
     String? externalRenderedScores,
+    required String hymnology,
     required String lang,
     @JsonKey(name: 'lang_string') required String langDescription,
     @JsonKey(name: 'type_enum', fromJson: SongLyricType.rawValueFromString) required int dbType,
@@ -111,6 +112,8 @@ class SongLyric with _$SongLyric implements DisplayableItem, Identifiable, Recen
 
   bool get hasTags => tags.isNotEmpty;
   bool get hasSongbooks => songbookRecords.isNotEmpty;
+
+  bool get hasHymnology => hymnology.isNotEmpty;
 
   bool get isFavorite =>
       playlistRecords.any((playlistRecord) => playlistRecord.playlist.targetId == favoritesPlaylistId);

@@ -45,6 +45,7 @@ song_lyrics_data = {
                 external_rendered_scores {
                     contents
                 }
+                hymnology
                 lang
                 lang_string
                 type_enum
