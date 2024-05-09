@@ -8,8 +8,8 @@ part of 'song_lyric.dart';
 
 _$SongLyricImpl _$$SongLyricImplFromJson(Map<String, dynamic> json) =>
     _$SongLyricImpl(
-      id: _readEzId(json, 'id') as int,
-      internalId: _readInternalId(json, 'internal_id') as int,
+      id: int.parse(json['id'] as String),
+      ezId: _readEzId(json, 'ez_id') as int,
       name: json['name'] as String,
       secondaryName1: json['secondary_name_1'] as String?,
       secondaryName2: json['secondary_name_2'] as String?,

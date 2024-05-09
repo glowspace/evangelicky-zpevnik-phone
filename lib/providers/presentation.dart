@@ -174,7 +174,7 @@ class PresentationProvider extends ChangeNotifier {
           _songLyricsParser = songLyricsParser;
 
           return _changeShowingData(_presentationData.copyWith(
-            songLyricId: songLyricsParser.songLyric.id,
+            songLyricId: songLyricsParser.songLyric.ezId,
             isCustomText: false,
             name: songLyricsParser.songLyric.name,
             text: songLyricsParser.getVerse(_part),

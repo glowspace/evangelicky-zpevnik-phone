@@ -22,7 +22,7 @@ final searchTextProvider =
 
 typedef _$SearchText = AutoDisposeNotifier<String>;
 String _$searchedSongLyricsHash() =>
-    r'415d43efbb3bc9f624536fbdd075f1335c21bba1';
+    r'39be385bec7999136f884eb936b6c42c48da47fc';
 
 /// See also [SearchedSongLyrics].
 @ProviderFor(SearchedSongLyrics)

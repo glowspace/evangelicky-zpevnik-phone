@@ -16,6 +16,10 @@ class SongLyricTag extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
+    print(songbookRecord?.songbook.target?.name);
+    print(songbookRecord?.songLyric.target?.name);
+    print(songbookRecord?.number);
+
     final String text;
     if (songbookRecord != null) {
       text = songbookRecord!.songbook.target!.name;

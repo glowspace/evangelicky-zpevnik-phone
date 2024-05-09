@@ -89,10 +89,6 @@ class SearchedSongLyrics extends _$SearchedSongLyrics {
     if (searchedNumber == null) {
       searchText = '${searchText.replaceAll(' ', '* ')}*';
     } else {
-      matchedById = songLyricBox.get(int.parse(searchedNumber));
-
-      if (matchedById != null) matchedIds.add(matchedById.id);
-
       final songbookRecords = queryStore(ref, condition: SongbookRecord_.number.equals(searchedNumber));
       songbookRecords.sort((a, b) => a.songbook.target!.compareTo(b.songbook.target!));
 
@@ -103,7 +99,11 @@ class SearchedSongLyrics extends _$SearchedSongLyrics {
 
         final songLyric = ref.read(songLyricProvider(songbookRecord.songLyric.targetId));
         if (songLyric != null) {
-          matchedBySongbookNumber.add(songLyric);
+          if (songbookRecord.songbook.targetId == 58) {
+            matchedById = songLyric;
+          } else {
+            matchedBySongbookNumber.add(songLyric);
+          }
         } else {
           Sentry.captureMessage(
             'missing song lyric from songbook record with id: $songbookRecord',

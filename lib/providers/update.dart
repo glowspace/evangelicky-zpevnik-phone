@@ -105,7 +105,7 @@ Stream<UpdateStatus> update(UpdateRef ref) async* {
   // query existing song lyrics to check song lyrics that are missing in local db or that were removed on server
   final box = appDependencies.store.box<SongLyric>();
   final query = box.query().build();
-  final existingSongLyricsIds = query.property(SongLyric_.internalId).find().toSet();
+  final existingSongLyricsIds = query.property(SongLyric_.id).find().toSet();
 
   query.close();
 
@@ -131,7 +131,7 @@ Stream<UpdateStatus> update(UpdateRef ref) async* {
       .then((json) => readJsonList(json[SongLyric.fieldKey], mapper: SongLyric.fromJson));
 
   for (final songLyric in songLyrics) {
-    missingSongLyricIds.remove(songLyric.internalId);
+    missingSongLyricIds.remove(songLyric.id);
   }
 
   // fetch missing song lyrics

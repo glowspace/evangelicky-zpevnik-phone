@@ -183,7 +183,7 @@ final _entities = <ModelEntity>[
   ModelEntity(
       id: const IdUid(11, 6447883453535376640),
       name: 'SongLyric',
-      lastPropertyId: const IdUid(31, 1452219602788211382),
+      lastPropertyId: const IdUid(32, 8340680947265221290),
       flags: 0,
       properties: <ModelProperty>[
         ModelProperty(
@@ -266,11 +266,6 @@ final _entities = <ModelEntity>[
             indexId: const IdUid(22, 6689134858203517923),
             relationTarget: 'SongLyricSettingsModel'),
         ModelProperty(
-            id: const IdUid(29, 1423809161795807367),
-            name: 'internalId',
-            type: 6,
-            flags: 0),
-        ModelProperty(
             id: const IdUid(30, 4119502192344556831),
             name: 'externalRenderedScores',
             type: 9,
@@ -279,6 +274,11 @@ final _entities = <ModelEntity>[
             id: const IdUid(31, 1452219602788211382),
             name: 'hymnology',
             type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(32, 8340680947265221290),
+            name: 'ezId',
+            type: 6,
             flags: 0)
       ],
       relations: <ModelRelation>[
@@ -679,7 +679,8 @@ ModelDefinition getObjectBoxModel() {
         7528607199616284548,
         3483625794157916143,
         3873057272621101277,
-        8900800022749379441
+        8900800022749379441,
+        1423809161795807367
       ],
       retiredRelationUids: const [
         7916874752771113838,
@@ -973,7 +974,7 @@ ModelDefinition getObjectBoxModel() {
                   ? null
                   : fbb.writeString(object.externalRenderedScores!);
           final hymnologyOffset = fbb.writeString(object.hymnology);
-          fbb.startTable(32);
+          fbb.startTable(33);
           fbb.addInt64(0, object.id);
           fbb.addOffset(1, nameOffset);
           fbb.addOffset(2, secondaryName1Offset);
@@ -989,9 +990,9 @@ ModelDefinition getObjectBoxModel() {
           fbb.addBool(22, object.showChords);
           fbb.addInt64(23, object.transposition);
           fbb.addInt64(26, object.settings.targetId);
-          fbb.addInt64(28, object.internalId);
           fbb.addOffset(29, externalRenderedScoresOffset);
           fbb.addOffset(30, hymnologyOffset);
+          fbb.addInt64(31, object.ezId);
           fbb.finish(fbb.endTable());
           return object.id;
         },
@@ -1000,8 +1001,8 @@ ModelDefinition getObjectBoxModel() {
           final rootOffset = buffer.derefObject(0);
           final idParam =
               const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          final internalIdParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 60, 0);
+          final ezIdParam =
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 66, 0);
           final nameParam = const fb.StringReader(asciiOptimization: true)
               .vTableGet(buffer, rootOffset, 6, '');
           final secondaryName1Param =
@@ -1047,7 +1048,7 @@ ModelDefinition getObjectBoxModel() {
           final playlistRecordsParam = ToMany<PlaylistRecord>();
           final object = SongLyric(
               id: idParam,
-              internalId: internalIdParam,
+              ezId: ezIdParam,
               name: nameParam,
               secondaryName1: secondaryName1Param,
               secondaryName2: secondaryName2Param,
@@ -1591,17 +1592,17 @@ class SongLyric_ {
   static final settings = QueryRelationToOne<SongLyric, SongLyricSettingsModel>(
       _entities[5].properties[14]);
 
-  /// see [SongLyric.internalId]
-  static final internalId =
-      QueryIntegerProperty<SongLyric>(_entities[5].properties[15]);
-
   /// see [SongLyric.externalRenderedScores]
   static final externalRenderedScores =
-      QueryStringProperty<SongLyric>(_entities[5].properties[16]);
+      QueryStringProperty<SongLyric>(_entities[5].properties[15]);
 
   /// see [SongLyric.hymnology]
   static final hymnology =
-      QueryStringProperty<SongLyric>(_entities[5].properties[17]);
+      QueryStringProperty<SongLyric>(_entities[5].properties[16]);
+
+  /// see [SongLyric.ezId]
+  static final ezId =
+      QueryIntegerProperty<SongLyric>(_entities[5].properties[17]);
 
   /// see [SongLyric.authors]
   static final authors =
