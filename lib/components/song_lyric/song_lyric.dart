@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -74,11 +75,13 @@ class _SongLyricWidgetState extends ConsumerState<SongLyricWidget> {
               child: Text(widget.songLyric.name, style: theme.textTheme.titleLarge),
             ),
             SizedBox(height: fontSizeScale * kDefaultPadding / 2),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2 * kDefaultPadding),
-              child: Text(widget.songLyric.authorsText, style: theme.textTheme.labelSmall),
-            ),
-            SizedBox(height: fontSizeScale * kDefaultPadding / 2),
+            if (!widget.songLyric.hasHymnology || widget.songLyric.authors.isNotEmpty) ...[
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2 * kDefaultPadding),
+                child: Text(widget.songLyric.authorsText, style: theme.textTheme.labelSmall),
+              ),
+              SizedBox(height: fontSizeScale * kDefaultPadding / 2),
+            ],
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 2 * kDefaultPadding),
               child: SongLyricChips(songLyric: widget.songLyric),

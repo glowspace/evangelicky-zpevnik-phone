@@ -6,14 +6,14 @@ part 'tag.freezed.dart';
 part 'tag.g.dart';
 
 const List<TagType> supportedTagTypes = [
-  TagType.liturgyPart,
-  TagType.liturgyPeriod,
-  TagType.sacredOccasion,
-  TagType.generic,
-  TagType.saints,
+  // TagType.liturgyPart,
+  // TagType.liturgyPeriod,
+  // TagType.sacredOccasion,
+  // TagType.generic,
+  // TagType.saints,
   // TagType.songbook,
   TagType.playlist,
-  TagType.language,
+  // TagType.language,
 ];
 
 enum TagType {

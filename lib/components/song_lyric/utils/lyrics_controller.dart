@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:zpevnik/models/song_lyric.dart';
 import 'package:zpevnik/components/song_lyric/utils/parser.dart';
 
-final _styleRE = RegExp(r'\<style[^\<]*\<\/style\>');
 final _viewBoxRE = RegExp(r'<svg[^>]* viewBox="0 0 ([\d\.]+) ([\d\.]+)"[^>]*>');
 final _sizeRE = RegExp(r'width="([\d\.]+)[^"]*" height="([\d\.]+)[^"]*"');
 
@@ -35,11 +34,11 @@ class LyricsController extends AssetBundle {
 
     if (viewBoxMatch != null) _musicNotesWidth = double.parse(viewBoxMatch.group(1)!);
 
-    _musicNotes = (songLyric.musicNotes ?? '').replaceAll(_styleRE, '').replaceFirstMapped(_sizeRE, (match) {
+    _musicNotes = (songLyric.musicNotes ?? '').replaceFirstMapped(_sizeRE, (match) {
       _musicNotesMaxWidth = double.parse(match.group(1)!);
 
       return 'viewBox="0 0 ${viewBoxMatch!.group(1)!} ${viewBoxMatch.group(2)!}"';
-    });
+    }).replaceAll('Times,serif', 'Times New Roman');
 
     return _musicNotes!;
   }

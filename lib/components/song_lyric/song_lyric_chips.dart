@@ -51,15 +51,15 @@ class SongLyricChips extends StatelessWidget {
               },
             ),
           ),
-        if (songLyric.hasTags || songLyric.hasSongbooks)
-          SongLyricChip(
-            text: songLyric.hasTags ? (songLyric.hasSongbooks ? 'Štítky, zpěvníky' : 'Štítky') : 'Zpěvníky',
-            icon: FontAwesomeIcons.tags,
-            onTap: () => showModalBottomSheet(
-              context: context,
-              builder: (_) => SongLyricTags(songLyric: songLyric),
-            ),
-          ),
+        // if (songLyric.hasTags || songLyric.hasSongbooks)
+        //   SongLyricChip(
+        //     text: songLyric.hasTags ? (songLyric.hasSongbooks ? 'Štítky, zpěvníky' : 'Štítky') : 'Zpěvníky',
+        //     icon: FontAwesomeIcons.tags,
+        //     onTap: () => showModalBottomSheet(
+        //       context: context,
+        //       builder: (_) => SongLyricTags(songLyric: songLyric),
+        //     ),
+        //   ),
         if (songLyric.hasHymnology)
           SongLyricChip(
             text: 'O písni',

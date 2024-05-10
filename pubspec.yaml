@@ -90,6 +90,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Amiri-Regular.ttf
 
+    - family: Leipzig
+      fonts:
+        - asset: assets/fonts/Leipzig.ttf
+
   assets:
     - assets/data.json
     - assets/images/
