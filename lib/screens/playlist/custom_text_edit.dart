@@ -55,39 +55,37 @@ class _CustomTextEditScreenState extends State<CustomTextEditScreen> {
       ),
       body: SafeArea(
         bottom: false,
-        child: QuillProvider(
-          configurations: QuillConfigurations(controller: _controller),
-          child: Column(children: [
-            const Padding(
-              padding: EdgeInsets.all(kDefaultPadding),
-              child: QuillToolbar(
-                configurations: QuillToolbarConfigurations(
-                  showClearFormat: false,
-                  showCodeBlock: false,
-                  showFontFamily: false,
-                  showFontSize: false,
-                  showInlineCode: false,
-                  showQuote: false,
-                  showSearchButton: false,
-                  showSubscript: false,
-                  showSuperscript: false,
-                  showBackgroundColorButton: false,
-                ),
+        child: Column(children: [
+          Padding(
+            padding: const EdgeInsets.all(kDefaultPadding),
+            child: QuillToolbar.simple(
+              configurations: QuillSimpleToolbarConfigurations(
+                controller: _controller,
+                showClearFormat: false,
+                showCodeBlock: false,
+                showFontFamily: false,
+                showFontSize: false,
+                showInlineCode: false,
+                showQuote: false,
+                showSearchButton: false,
+                showSubscript: false,
+                showSuperscript: false,
+                showBackgroundColorButton: false,
               ),
             ),
-            const Divider(),
-            Expanded(
-              child: QuillEditor.basic(
-                configurations: const QuillEditorConfigurations(
-                  padding: EdgeInsets.symmetric(horizontal: 1.5 * kDefaultPadding, vertical: kDefaultPadding),
-                  autoFocus: false,
-                  expands: false,
-                  readOnly: false,
-                ),
+          ),
+          const Divider(),
+          Expanded(
+            child: QuillEditor.basic(
+              configurations: QuillEditorConfigurations(
+                controller: _controller,
+                padding: const EdgeInsets.symmetric(horizontal: 1.5 * kDefaultPadding, vertical: kDefaultPadding),
+                autoFocus: false,
+                expands: false,
               ),
             ),
-          ]),
-        ),
+          ),
+        ]),
       ),
     );
   }

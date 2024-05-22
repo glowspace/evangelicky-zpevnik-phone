@@ -2,7 +2,7 @@ name: zpevnik
 
 publish_to: 'none'
 
-version: 1.1.0+7
+version: 1.1.0+8
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -14,27 +14,30 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  zpevnik_common:
+    path: ../zpevnik-common
+
   sqflite: ^2.0.2+1
   path: ^1.8.0
 
-  objectbox: ^2.0.0
+  objectbox: ^4.0.0
   objectbox_flutter_libs: any
 
   shared_preferences: ^2.0.6
-  intl: ^0.18.0
+  intl: ^0.19.0
   wakelock_plus: ^1.1.2
 
   url_launcher: ^6.0.6
-  share_plus: ^7.1.0
+  share_plus: ^9.0.0
 
-  youtube_player_flutter: ^8.0.0
+  youtube_player_flutter: ^9.0.1
   just_audio: ^0.9.27
 
   flutter_cached_pdfview: ^0.4.1
 
   flutter_staggered_grid_view: ^0.7.0
 
-  adaptive_dialog: ^1.9.0-no-macos.2
+  adaptive_dialog: ^2.1.0
 
   dotted_border: ^2.0.0+2
 
@@ -44,25 +47,25 @@ dependencies:
 
   cupertino_icons: ^1.0.3
 
-  package_info_plus: ^4.1.0
+  package_info_plus: ^8.0.0
   flutter_slidable: ^3.0.0
   # firebase_core: ^2.4.1
   # firebase_analytics: ^10.1.0
   cached_network_image: ^3.2.2
-  photo_view: ^0.14.0
+  photo_view: ^0.15.0
   rxdart: ^0.27.7
-  flat_buffers: ^2.0.5
+  flat_buffers: ^23.5.26
   collection: ^1.16.0
   http: ^1.0.0
   freezed_annotation: ^2.2.0
   flutter_riverpod: ^2.3.6
   riverpod_annotation: ^2.1.1
   path_provider: ^2.0.15
-  flutter_quill: ^8.1.6
+  flutter_quill: ^9.3.19
   flex_color_picker: ^3.3.0
   flutter_speed_dial: ^7.0.0
   flutter_native_splash: ^2.3.5
-  sentry_flutter: ^7.12.0
+  sentry_flutter: ^8.2.0
   graphql_flutter: ^5.2.0-beta.6
   jovial_svg: ^1.1.20
 
@@ -93,6 +96,10 @@ flutter:
     - family: Leipzig
       fonts:
         - asset: assets/fonts/Leipzig.ttf
+
+    - family: Times
+      fonts:
+        - asset: assets/fonts/Times.ttf
 
   assets:
     - assets/data.json

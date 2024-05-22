@@ -14,24 +14,20 @@ class CustomTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return QuillProvider(
-      configurations: QuillConfigurations(
+    return QuillEditor.basic(
+      configurations: QuillEditorConfigurations(
         controller: QuillController(
           document: _deserializeMarkdownToDocument(customText.content),
+          readOnly: true,
           selection: const TextSelection.collapsed(offset: 0),
         ),
+        padding: const EdgeInsets.symmetric(horizontal: 1.5 * kDefaultPadding, vertical: kDefaultPadding),
+        autoFocus: false,
+        expands: false,
+        scrollable: true,
+        showCursor: false,
       ),
-      child: QuillEditor.basic(
-        configurations: const QuillEditorConfigurations(
-          padding: EdgeInsets.symmetric(horizontal: 1.5 * kDefaultPadding, vertical: kDefaultPadding),
-          readOnly: true,
-          autoFocus: false,
-          expands: false,
-          scrollable: true,
-          showCursor: false,
-        ),
-        scrollController: autoScrollController,
-      ),
+      scrollController: autoScrollController,
     );
   }
 

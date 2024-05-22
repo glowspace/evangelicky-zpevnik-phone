@@ -1388,7 +1388,7 @@ class _PopupMenuDefaultsM2 extends PopupMenuThemeData {
   late final TextTheme _textTheme = _theme.textTheme;
 
   @override
-  TextStyle? get textStyle => _textTheme.subtitle1;
+  TextStyle? get textStyle => _textTheme.titleMedium;
 }
 
 // BEGIN GENERATED TOKEN PROPERTIES - PopupMenu
