@@ -1,4 +1,4 @@
-const proscholyUrl = 'https://zpevnik.proscholy.cz';
+const proscholyUrl = 'https://evangelickyzpevnik.cz';
 
 const songUrl = '$proscholyUrl/pisen';
 
