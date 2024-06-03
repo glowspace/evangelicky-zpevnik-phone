@@ -16,6 +16,10 @@ class AdditionalSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
+    final version = context.providers.read(appDependenciesProvider).packageInfo.version;
+    final platform = theme.platform == TargetPlatform.iOS ? 'iOS' : 'android';
+    final url = 'https://$platform.evangelickyzpevnik.cz/v$version';
+
     return Section(
       outsideTitle: 'Další možnosti',
       outsideTitleLarge: true,
@@ -51,8 +55,8 @@ class AdditionalSection extends StatelessWidget {
         Highlightable(
           highlightBackground: true,
           padding: const EdgeInsets.all(kDefaultPadding),
-          onTap: () => launch(theme.platform.isIos ? feedbackIOSUrl : feedbackAndroidUrl),
-          child: const IconItem(icon: Icons.feedback, text: 'Zpětná vazba', trailingIcon: Icons.open_in_new),
+          onTap: () => launch('$reportSongLyricUrl?customfield_10056=$url'),
+          child: const IconItem(icon: Icons.feedback, text: 'Nahlásit chybu', trailingIcon: Icons.open_in_new),
         ),
         const Divider(),
         Highlightable(

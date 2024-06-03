@@ -86,7 +86,8 @@ class SongLyricMenuButton extends StatelessWidget {
         final version = context.providers.read(appDependenciesProvider).packageInfo.version;
         final platform = Theme.of(context).platform == TargetPlatform.iOS ? 'iOS' : 'android';
 
-        final url = 'https://$platform.proscholy.cz/v$version/pisen/${songLyric.id}/${_formatName(songLyric.name)}';
+        final url =
+            'https://$platform.evangelickyzpevnik.cz/v$version/pisen/${songLyric.id}/${_formatName(songLyric.name)}';
 
         launch('$reportSongLyricUrl?customfield_10056=$url');
         break;
