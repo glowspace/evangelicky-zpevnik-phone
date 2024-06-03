@@ -10,5 +10,5 @@ _$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
       id: int.parse(json['id'] as String),
       name: json['name'] as String,
       dbType: TagType.rawValueFromString(json['type_enum'] as String),
-      songLyricsCount: json['song_lyrics_count'] as int,
+      songLyricsCount: (json['song_lyrics_count'] as num).toInt(),
     );

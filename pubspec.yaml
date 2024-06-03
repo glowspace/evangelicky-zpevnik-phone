@@ -14,9 +14,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  zpevnik_common:
-    path: ../zpevnik-common
-
   sqflite: ^2.0.2+1
   path: ^1.8.0
 

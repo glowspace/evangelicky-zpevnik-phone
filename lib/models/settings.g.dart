@@ -9,12 +9,12 @@ part of 'settings.dart';
 _$GlobalSettingsImpl _$$GlobalSettingsImplFromJson(Map<String, dynamic> json) =>
     _$GlobalSettingsImpl(
       darkModeEnabled: json['darkModeEnabled'] as bool?,
-      seedColor: json['seedColor'] as int,
+      seedColor: (json['seedColor'] as num).toInt(),
       fontSizeScale: (json['fontSizeScale'] as num).toDouble(),
       showChords: json['showChords'] as bool,
       showMusicalNotes: json['showMusicalNotes'] as bool,
-      accidentals: json['accidentals'] as int,
-      autoScrollSpeedIndex: json['autoScrollSpeedIndex'] as int,
+      accidentals: (json['accidentals'] as num).toInt(),
+      autoScrollSpeedIndex: (json['autoScrollSpeedIndex'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$GlobalSettingsImplToJson(

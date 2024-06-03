@@ -9,7 +9,7 @@ part of 'presentation.dart';
 _$PresentationDataImpl _$$PresentationDataImplFromJson(
         Map<String, dynamic> json) =>
     _$PresentationDataImpl(
-      songLyricId: json['songLyricId'] as int?,
+      songLyricId: (json['songLyricId'] as num?)?.toInt(),
       isCustomText: json['isCustomText'] as bool? ?? false,
       name: json['name'] as String,
       text: json['text'] as String,

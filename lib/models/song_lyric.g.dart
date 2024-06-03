@@ -9,7 +9,7 @@ part of 'song_lyric.dart';
 _$SongLyricImpl _$$SongLyricImplFromJson(Map<String, dynamic> json) =>
     _$SongLyricImpl(
       id: int.parse(json['id'] as String),
-      ezId: _readEzId(json, 'ez_id') as int,
+      ezId: (_readEzId(json, 'ez_id') as num).toInt(),
       name: json['name'] as String,
       secondaryName1: json['secondary_name_1'] as String?,
       secondaryName2: json['secondary_name_2'] as String?,
@@ -22,9 +22,9 @@ _$SongLyricImpl _$$SongLyricImplFromJson(Map<String, dynamic> json) =>
       langDescription: json['lang_string'] as String,
       dbType: SongLyricType.rawValueFromString(json['type_enum'] as String?),
       hasChords: json['has_chords'] as bool,
-      accidentals: json['accidentals'] as int?,
+      accidentals: (json['accidentals'] as num?)?.toInt(),
       showChords: json['show_chords'] as bool?,
-      transposition: json['transposition'] as int?,
+      transposition: (json['transposition'] as num?)?.toInt(),
       song: _songFromJson(json['song'] as Map<String, dynamic>?),
       settings: _settingsFromJson(json['settings'] as Map<String, dynamic>?),
       authors: _authorsFromJson(json['authors_pivot'] as List),
