@@ -59,10 +59,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final sections = [
       for (final homeSection in ref.watch(homeSectionSettingsProvider))
         switch (homeSection) {
-          HomeSection.news => const NewsSection(),
           HomeSection.recent => const RecentSection(),
           HomeSection.playlists => const SongListsSection(),
-          // HomeSection.songbooks => const SongbooksSection(),
         },
       const AdditionalSection(),
     ];

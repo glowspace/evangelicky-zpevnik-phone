@@ -58,20 +58,6 @@ class AdditionalSection extends StatelessWidget {
           onTap: () => launch('$reportSongLyricUrl?customfield_10056=$url'),
           child: const IconItem(icon: Icons.feedback, text: 'Nahlásit chybu', trailingIcon: Icons.open_in_new),
         ),
-        const Divider(),
-        Highlightable(
-          highlightBackground: true,
-          padding: const EdgeInsets.all(kDefaultPadding),
-          onTap: () => launch(addSongUrl),
-          child: const IconItem(icon: Icons.add, text: 'Přidat píseň', trailingIcon: Icons.open_in_new),
-        ),
-        const Divider(),
-        Highlightable(
-          highlightBackground: true,
-          padding: const EdgeInsets.all(kDefaultPadding),
-          onTap: () => launch(dontaionsUrl),
-          child: const IconItem(icon: Icons.favorite, text: 'Darovat', trailingIcon: Icons.open_in_new, iconColor: red),
-        ),
       ],
     );
   }

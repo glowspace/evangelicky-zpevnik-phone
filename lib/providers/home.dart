@@ -9,11 +9,8 @@ const _homeSectionsKey = 'home_screen_sections';
 const _defaultHomeSections = HomeSection.values;
 
 enum HomeSection {
-  news('Novinky'),
   recent('Poslední položky'),
   playlists('Moje seznamy'),
-  // removed songbooks section for now
-  // songbooks('Zpěvníky'),
   ;
 
   final String description;
