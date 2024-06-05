@@ -327,7 +327,7 @@ class _SongLyricWidgetState extends ConsumerState<SongLyricWidget> {
       }
     }
 
-    final chordColor = Theme.of(context).brightness.isLight ? const Color(0xff3961ad) : const Color(0xff4dc0b5);
+    final chordColor = Theme.of(context).colorScheme.primary;
 
     return WidgetSpan(
       child: Stack(children: [

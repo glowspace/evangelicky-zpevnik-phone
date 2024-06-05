@@ -21,7 +21,7 @@ const Color lightIconColor = Color(0xff595959);
 const Color darkIconColor = Color(0xffa6a6a6);
 
 const Color lightDividerColor = Color(0xfff5f5f8);
-const Color darkDividerColor = Color(0xff282839);
+const Color darkDividerColor = Color(0xff282828);
 
 const Color lightShadowColor = Color(0xfff3edf7);
 const Color darkShadowColor = Color(0xff341d43);
@@ -32,7 +32,7 @@ class AppTheme {
 
     return ThemeData(
       brightness: Brightness.light,
-      colorScheme: ColorScheme.fromSeed(seedColor: seedColor, background: lightBackgroundColor),
+      colorScheme: ColorScheme.fromSeed(seedColor: seedColor, surface: Colors.white),
       scaffoldBackgroundColor: Colors.white,
       appBarTheme: const AppBarTheme(
         iconTheme: iconTheme,
