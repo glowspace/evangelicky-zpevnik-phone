@@ -29,7 +29,8 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
+    ndkVersion "23.1.7779620"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -41,8 +42,8 @@ android {
 
     defaultConfig {
         applicationId "cce.evangelicky_zpevnik"
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdkVersion 23
+        targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true

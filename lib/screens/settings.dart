@@ -10,6 +10,7 @@ import 'package:zpevnik/constants.dart';
 import 'package:zpevnik/providers/settings.dart';
 import 'package:zpevnik/routing/safe_area_wrapper.dart';
 import 'package:zpevnik/utils/extensions.dart';
+import 'package:zpevnik/utils/url_launcher.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -37,7 +38,7 @@ class SettingsScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: kDefaultPadding),
                 Highlightable(
-                  onTap: () => context.push('/about'),
+                  onTap: () => launch('https://evangelickyzpevnik.glowspace.cz/o-zpevniku'),
                   padding: const EdgeInsets.all(kDefaultPadding / 2),
                   textStyle: textTheme.bodySmall,
                   child: const Text('O projektu'),

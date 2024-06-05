@@ -8,7 +8,6 @@ import 'package:zpevnik/models/songbook.dart';
 import 'package:zpevnik/providers/song_lyrics.dart';
 import 'package:zpevnik/routing/arguments.dart';
 import 'package:zpevnik/routing/navigation_rail_wrapper.dart';
-import 'package:zpevnik/screens/about.dart';
 import 'package:zpevnik/screens/display.dart';
 import 'package:zpevnik/screens/home.dart';
 import 'package:zpevnik/screens/playlist/custom_text_edit.dart';
@@ -31,7 +30,6 @@ final class AppRouter {
 
     final (builder, fullScreenDialog, showNavigationRail) = switch (uri.path) {
       '/' => ((_) => const HomeScreen(), false, true),
-      '/about' => ((_) => const AboutScreen(), false, false),
       '/display' => (
           (_) {
             final arguments = settings.arguments as DisplayScreenArguments;
