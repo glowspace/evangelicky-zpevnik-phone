@@ -22,7 +22,7 @@ part 'update.g.dart';
 const _versionKey = 'current_version';
 
 const _lastUpdateKey = 'last_update';
-const _initialLastUpdate = '2024-05-08 09:00:00';
+const _initialLastUpdate = '2024-06-05 09:00:00';
 
 const _updatePeriod = Duration(hours: 1);
 

@@ -38,7 +38,7 @@ class SettingsScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: kDefaultPadding),
                 Highlightable(
-                  onTap: () => launch('https://evangelickyzpevnik.glowspace.cz/o-zpevniku'),
+                  onTap: () => launch('https://evangelickyzpevnik.cz/o-zpevniku'),
                   padding: const EdgeInsets.all(kDefaultPadding / 2),
                   textStyle: textTheme.bodySmall,
                   child: const Text('O projektu'),
