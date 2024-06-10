@@ -55,7 +55,7 @@ class AdditionalSection extends StatelessWidget {
         Highlightable(
           highlightBackground: true,
           padding: const EdgeInsets.all(kDefaultPadding),
-          onTap: () => launch('$reportSongLyricUrl?customfield_10056=$url'),
+          onTap: () => launch('$reportUrl?customfield_10056=$url'),
           child: const IconItem(icon: Icons.feedback, text: 'Nahlásit chybu', trailingIcon: Icons.open_in_new),
         ),
       ],

@@ -5,6 +5,7 @@ import 'package:zpevnik/components/section.dart';
 import 'package:zpevnik/constants.dart';
 import 'package:zpevnik/links.dart';
 import 'package:zpevnik/models/song_lyric.dart';
+import 'package:zpevnik/providers/app_dependencies.dart';
 import 'package:zpevnik/providers/update.dart';
 import 'package:zpevnik/utils/extensions.dart';
 import 'package:zpevnik/utils/url_launcher.dart';
@@ -48,6 +49,10 @@ class _UpdateSectionState extends ConsumerState<UpdateSection> {
         ? (error == null ? 'Probíhá stahování písní' : 'Při aktualizaci nastala chyba')
         : 'Počet aktualizovaných písní: ${updatedSongLyrics!.length}';
 
+    final version = context.providers.read(appDependenciesProvider).packageInfo.version;
+    final platform = theme.platform == TargetPlatform.iOS ? 'iOS' : 'android';
+    final url = 'https://$platform.evangelickyzpevnik.cz/v$version';
+
     return AnimatedCrossFade(
       crossFadeState: isShowing ? CrossFadeState.showFirst : CrossFadeState.showSecond,
       duration: kDefaultAnimationDuration,
@@ -72,7 +77,8 @@ class _UpdateSectionState extends ConsumerState<UpdateSection> {
                     Highlightable(
                       foregroundColor: red,
                       padding: const EdgeInsets.only(top: 2 / 3 * kDefaultPadding),
-                      onTap: () => launch('$reportUrl?summary=Chyba při aktualizaci písní&description=$error'),
+                      onTap: () => launch(
+                          '$reportUrl?customfield_10056=$url&summary=Chyba při aktualizaci písní&description=$error'),
                       child: const Text('Nahlásit chybu'),
                     ),
                 ],
