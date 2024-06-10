@@ -2,7 +2,7 @@ const proscholyUrl = 'https://evangelickyzpevnik.cz';
 
 const songUrl = '$proscholyUrl/pisen';
 
-const reportSongLyricUrl = 'https://proscholy.atlassian.net/servicedesk/customer/portal/1/group/1/create/19';
+const reportSongLyricUrl = 'https://glowspace.atlassian.net/servicedesk/customer/portal/1/group/1/create/19';
 
 const reportUrl = 'https://glowspace.atlassian.net/servicedesk/customer/portal/1/group/6/create/20';
 
