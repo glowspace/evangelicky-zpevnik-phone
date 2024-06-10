@@ -88,8 +88,9 @@ class _SongLyricWidgetState extends ConsumerState<SongLyricWidget> {
             if (controller.hasMusicNotes && showLilypond)
               ScalableImageWidget.fromSISource(
                 si: ScalableImageSource.fromSvg(controller, ''),
-                scale:
-                    min(MediaQuery.sizeOf(context).width, controller.musicNotesMaxWidth) / controller.musicNotesWidth,
+                scale: min(MediaQuery.sizeOf(context).width, controller.musicNotesMaxWidth / 2) /
+                    controller.musicNotesWidth,
+                currentColor: theme.colorScheme.onBackground,
               ),
             SizedBox(height: kDefaultPadding * fontSizeScale),
             MediaQuery(

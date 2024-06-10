@@ -43,7 +43,10 @@ class DisplayScreenArguments {
 
   @override
   bool operator ==(Object other) {
-    return other is DisplayScreenArguments && initialIndex == other.initialIndex && items.length == other.items.length;
+    return other is DisplayScreenArguments &&
+        initialIndex == other.initialIndex &&
+        items.length == other.items.length &&
+        items[initialIndex].id == other.items[initialIndex].id;
   }
 }
 
