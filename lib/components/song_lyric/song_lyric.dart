@@ -86,11 +86,26 @@ class _SongLyricWidgetState extends ConsumerState<SongLyricWidget> {
               child: SongLyricChips(songLyric: widget.songLyric),
             ),
             if (controller.hasMusicNotes && showLilypond)
-              ScalableImageWidget.fromSISource(
-                si: ScalableImageSource.fromSvg(controller, ''),
-                scale: min(MediaQuery.sizeOf(context).width, controller.musicNotesMaxWidth / 2) /
-                    controller.musicNotesWidth,
-                currentColor: theme.colorScheme.onBackground,
+              ColorFiltered(
+                colorFilter: Theme.of(context).brightness.isDark
+                    ? const ColorFilter.matrix(<double>[
+                        -1.0, 0.0, 0.0, 0.0, 255.0, //
+                        0.0, -1.0, 0.0, 0.0, 255.0, //
+                        0.0, 0.0, -1.0, 0.0, 255.0, //
+                        0.0, 0.0, 0.0, 1.0, 0.0, //
+                      ])
+                    : const ColorFilter.matrix(<double>[
+                        1.0, 0.0, 0.0, 0.0, 0.0, //
+                        0.0, 1.0, 0.0, 0.0, 0.0, //
+                        0.0, 0.0, 1.0, 0.0, 0.0, //
+                        0.0, 0.0, 0.0, 1.0, 0.0, //
+                      ]),
+                child: ScalableImageWidget.fromSISource(
+                  si: ScalableImageSource.fromSvg(controller, ''),
+                  scale: min(MediaQuery.sizeOf(context).width, controller.musicNotesMaxWidth / 2) /
+                      controller.musicNotesWidth,
+                  // currentColor: theme.colorScheme.onBackground,
+                ),
               ),
             SizedBox(height: kDefaultPadding * fontSizeScale),
             MediaQuery(
