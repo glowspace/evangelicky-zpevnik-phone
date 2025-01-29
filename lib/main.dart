@@ -1,4 +1,3 @@
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -8,24 +7,21 @@ import 'package:path/path.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:zpevnik/firebase_options.dart';
-import 'package:zpevnik/models/objectbox.g.dart';
-import 'package:zpevnik/providers/app_dependencies.dart';
-import 'package:zpevnik/providers/settings.dart';
-import 'package:zpevnik/providers/update.dart';
-import 'package:zpevnik/routing/navigator_observer.dart';
-import 'package:zpevnik/routing/router.dart';
-import 'package:zpevnik/screens/presentation.dart';
-import 'package:zpevnik/theme.dart';
-import 'package:zpevnik/utils/services/external_actions.dart';
-import 'package:zpevnik/utils/services/spotlight.dart';
+import 'package:proscholy_common/models/generated/objectbox.g.dart';
+import 'package:proscholy_common/providers/app_dependencies.dart';
+import 'package:proscholy_common/providers/settings.dart';
+import 'package:proscholy_common/providers/update.dart';
+import 'package:proscholy_common/routing/navigator_observer.dart';
+import 'package:proscholy_common/routing/router.dart';
+import 'package:proscholy_common/screens/presentation.dart';
+import 'package:proscholy_common/theme.dart';
+import 'package:proscholy_common/utils/services/external_actions.dart';
+import 'package:proscholy_common/utils/services/spotlight.dart';
 
 const _title = 'Evangelický zpěvník';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   final appDependencies = AppDependencies(
     sharedPreferences: await SharedPreferences.getInstance(),
