@@ -41,10 +41,6 @@ song_lyrics_data = {
                 secondary_name_1
                 secondary_name_2
                 lyrics
-                lilypond_svg
-                external_rendered_scores {
-                    contents
-                }
                 hymnology
                 lang
                 lang_string
@@ -96,6 +92,7 @@ data = json.loads(requests.post(url, headers=headers, data=json.dumps(all_data))
 data['data']['song_lyrics'] = []
 
 for i in range(100):
+    print(i)
     song_lyrics_data['variables']['page'] = i + 1
     song_lyrics = json.loads(requests.post(url, headers=headers, data=json.dumps(song_lyrics_data)).content)['data']['search_song_lyrics']['data']
 
@@ -104,7 +101,10 @@ for i in range(100):
 
     data['data']['song_lyrics'] += song_lyrics
 
-    time.sleep(5)
+    time.sleep(0.1)
 
 with open('assets/data.json', 'w') as file:
     json.dump(data, file)
+
+with open('assets/svg.zip', 'wb') as file:
+    file.write(requests.get('https://zpevnik.proscholy.cz/download-svgs', headers=headers).content)
