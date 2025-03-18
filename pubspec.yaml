@@ -24,6 +24,7 @@ dependencies:
   path: ^1.9.1
   sentry_flutter: ^8.12.0
   shared_preferences: ^2.4.0
+  flutter_quill: ^11.1.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0
