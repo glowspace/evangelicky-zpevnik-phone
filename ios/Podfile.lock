@@ -3,17 +3,16 @@ PODS:
     - Flutter
   - connectivity_plus (0.0.1):
     - Flutter
-    - FlutterMacOS
-  - Firebase/CoreOnly (11.6.0):
-    - FirebaseCore (~> 11.6.0)
-  - firebase_core (3.10.1):
-    - Firebase/CoreOnly (= 11.6.0)
+  - Firebase/CoreOnly (11.10.0):
+    - FirebaseCore (~> 11.10.0)
+  - firebase_core (3.13.1):
+    - Firebase/CoreOnly (= 11.10.0)
     - Flutter
-  - FirebaseCore (11.6.0):
-    - FirebaseCoreInternal (~> 11.6.0)
+  - FirebaseCore (11.10.0):
+    - FirebaseCoreInternal (~> 11.10.0)
     - GoogleUtilities/Environment (~> 8.0)
     - GoogleUtilities/Logger (~> 8.0)
-  - FirebaseCoreInternal (11.6.0):
+  - FirebaseCoreInternal (11.10.0):
     - "GoogleUtilities/NSData+zlib (~> 8.0)"
   - Flutter (1.0.0)
   - flutter_inappwebview_ios (0.0.1):
@@ -27,21 +26,21 @@ PODS:
     - Flutter
   - flutter_pdfview (1.0.2):
     - Flutter
-  - GoogleUtilities/Environment (8.0.2):
+  - GoogleUtilities/Environment (8.1.0):
     - GoogleUtilities/Privacy
-  - GoogleUtilities/Logger (8.0.2):
+  - GoogleUtilities/Logger (8.1.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Privacy
-  - "GoogleUtilities/NSData+zlib (8.0.2)":
+  - "GoogleUtilities/NSData+zlib (8.1.0)":
     - GoogleUtilities/Privacy
-  - GoogleUtilities/Privacy (8.0.2)
+  - GoogleUtilities/Privacy (8.1.0)
   - just_audio (0.0.1):
     - Flutter
     - FlutterMacOS
-  - ObjectBox (4.0.1)
+  - ObjectBox (4.2.0)
   - objectbox_flutter_libs (0.0.1):
     - Flutter
-    - ObjectBox (= 4.0.1)
+    - ObjectBox (= 4.2.0)
   - OrderedSet (6.0.3)
   - package_info_plus (0.4.5):
     - Flutter
@@ -50,11 +49,11 @@ PODS:
     - FlutterMacOS
   - quill_native_bridge_ios (0.0.1):
     - Flutter
-  - Sentry/HybridSDK (8.42.0)
-  - sentry_flutter (8.12.0):
+  - Sentry/HybridSDK (8.46.0)
+  - sentry_flutter (8.14.2):
     - Flutter
     - FlutterMacOS
-    - Sentry/HybridSDK (= 8.42.0)
+    - Sentry/HybridSDK (= 8.46.0)
   - share_plus (0.0.1):
     - Flutter
   - shared_preferences_foundation (0.0.1):
@@ -70,7 +69,7 @@ PODS:
 
 DEPENDENCIES:
   - audio_session (from `.symlinks/plugins/audio_session/ios`)
-  - connectivity_plus (from `.symlinks/plugins/connectivity_plus/darwin`)
+  - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
   - flutter_inappwebview_ios (from `.symlinks/plugins/flutter_inappwebview_ios/ios`)
@@ -102,7 +101,7 @@ EXTERNAL SOURCES:
   audio_session:
     :path: ".symlinks/plugins/audio_session/ios"
   connectivity_plus:
-    :path: ".symlinks/plugins/connectivity_plus/darwin"
+    :path: ".symlinks/plugins/connectivity_plus/ios"
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
@@ -137,31 +136,31 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/wakelock_plus/ios"
 
 SPEC CHECKSUMS:
-  audio_session: 94075f61f538dbe8f90f0cee58af3f1837ba7d2b
-  connectivity_plus: 2256d3e20624a7749ed21653aafe291a46446fee
-  Firebase: 374a441a91ead896215703a674d58cdb3e9d772b
-  firebase_core: d3deb82d05dac4bc13190f9d1770787fd6a1cda4
-  FirebaseCore: 48b0dd707581cf9c1a1220da68223fb0a562afaa
-  FirebaseCoreInternal: d98ab91e2d80a56d7b246856a8885443b302c0c2
+  audio_session: 9bb7f6c970f21241b19f5a3658097ae459681ba0
+  connectivity_plus: cb623214f4e1f6ef8fe7403d580fdad517d2f7dd
+  Firebase: 1fe1c0a7d9aaea32efe01fbea5f0ebd8d70e53a2
+  firebase_core: ba71b44041571da878cb624ce0d80250bcbe58ad
+  FirebaseCore: 8344daef5e2661eb004b177488d6f9f0f24251b7
+  FirebaseCoreInternal: ef4505d2afb1d0ebbc33162cb3795382904b5679
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_inappwebview_ios: b89ba3482b96fb25e00c967aae065701b66e9b99
   flutter_keyboard_visibility_temp_fork: 95b2d534bacf6ac62e7fcbe5c2a9e2c2a17ce06f
   flutter_pdfview: 32bf27bda6fd85b9dd2c09628a824df5081246cf
-  GoogleUtilities: 26a3abef001b6533cf678d3eb38fd3f614b7872d
+  GoogleUtilities: 00c88b9a86066ef77f0da2fab05f65d7768ed8e1
   just_audio: 4e391f57b79cad2b0674030a00453ca5ce817eed
-  ObjectBox: 0bc4bb75eea85f6af06b369148b334c2056bbc29
-  objectbox_flutter_libs: 3af037f7cc35e687acca01f1f6da6cb6c2abc22b
+  ObjectBox: 2b4c925852ea99f070492f21328bf4002165cbd9
+  objectbox_flutter_libs: 50402e45f47f385d47fc041aba4607b89c4a3a1f
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
   package_info_plus: af8e2ca6888548050f16fa2f1938db7b5a5df499
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   quill_native_bridge_ios: f47af4b14e7757968486641656c5d23250cee521
-  Sentry: 38ed8bf38eab5812787274bf591e528074c19e02
-  sentry_flutter: a72ca0eb6e78335db7c4ddcddd1b9f6c8ed5b764
+  Sentry: da60d980b197a46db0b35ea12cb8f39af48d8854
+  sentry_flutter: 27892878729f42701297c628eb90e7c6529f3684
   share_plus: 50da8cb520a8f0f65671c6c6a99b3617ed10a58a
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
   sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
   url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
-  wakelock_plus: 04623e3f525556020ebd4034310f20fe7fda8b49
+  wakelock_plus: e29112ab3ef0b318e58cfa5c32326458be66b556
 
 PODFILE CHECKSUM: d59e21f8b87a9222c354adffda37d65226b2db89
 
