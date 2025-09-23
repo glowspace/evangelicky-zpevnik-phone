@@ -2,7 +2,7 @@ name: zpevnik
 
 publish_to: 'none'
 
-version: 1.1.6+17
+version: 1.1.6+18
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -19,37 +19,34 @@ dependencies:
 
   sqflite: ^2.0.2+1
   firebase_core: ^3.10.1
-  flutter_riverpod: ^2.6.1
-  package_info_plus: ^8.1.3
+  flutter_riverpod: ^3.0.0
+  package_info_plus: ^9.0.0
   path: ^1.9.1
-  sentry_flutter: ^8.12.0
+  sentry_flutter: ^9.6.0
   shared_preferences: ^2.4.0
   flutter_quill: ^11.1.0
   flutter_native_splash: ^2.4.6
 
 dev_dependencies:
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
   uses-material-design: true
 
+  # fonts must be defined per project, otherwise they are not bundled
   fonts:
     - family: CustomIcon
       fonts:
         - asset: packages/proscholy_common/assets/fonts/CustomIcon.ttf
-
     - family: KaiseiHarunoUmi
       fonts:
         - asset: packages/proscholy_common/assets/fonts/KaiseiHarunoUmi-Regular.ttf
-
     - family: Amiri
       fonts:
         - asset: packages/proscholy_common/assets/fonts/Amiri-Regular.ttf
-
     - family: Leipzig
       fonts:
         - asset: assets/fonts/Leipzig.ttf
-
     - family: Times
       fonts:
         - asset: assets/fonts/Times.ttf
