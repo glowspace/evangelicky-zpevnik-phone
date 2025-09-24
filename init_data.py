@@ -45,6 +45,7 @@ song_lyrics_data = {
                 lang
                 lang_string
                 type_enum
+                is_arrangement
                 has_chords
                 song {
                     id
