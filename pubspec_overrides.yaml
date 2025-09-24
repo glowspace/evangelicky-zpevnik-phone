@@ -1,3 +1,0 @@
-dependency_overrides:
-  proscholy_common:
-    path: ../proscholy-common
